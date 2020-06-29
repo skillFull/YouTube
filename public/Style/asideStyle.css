@@ -1,0 +1,97 @@
+
+ aside{
+     margin: 0;
+     margin-top: 56px;
+     width: 240px;
+     height: calc(100vh - 56px);
+     overflow: hidden;
+     position: fixed;
+     top: 0;
+ }
+ 
+ aside:hover{
+     overflow-y: scroll;
+     scroll-margin: 0;
+     scroll-padding: 0;
+     position: fixed;
+     margin-top: 56px;
+ }
+ 
+ aside::-webkit-scrollbar{
+     width: 8px;
+     background-color: white;
+     margin: 0;
+     padding: 0;
+ }
+ aside::-webkit-scrollbar-thumb{
+     background-color: rgb(209, 209, 209);;
+ }
+ 
+ 
+ aside ul,
+ aside li{ 
+     margin: 0;
+     padding: 0;
+     text-decoration: none;
+     list-style: none;
+     font-size: 1.38em;
+ }
+ aside ul{
+     width: 232px;
+     padding-top: 12px;
+     padding-bottom: 12px;
+     border-bottom: 1px solid rgb(212, 212, 212);
+ }
+ 
+ .guideList li {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding-left: 6px;
+     width: 226px;
+     height: 40px;
+     cursor: pointer;
+ }
+ .guideList li:hover{
+     background-color: rgba(218, 218, 218, 0.507);
+ }
+ 
+ .listText{
+     width: 144px;
+     height: 18px;
+ }
+ 
+ .listIcons{
+     width: 24px;
+     height: 24px;
+     margin: 0;
+     margin-right: 24px;
+ }
+ 
+ 
+ 
+ .subscriptions,
+ .OtherOpportunities{
+     padding-left: 15px;
+     font-size: 17px;
+     font-weight: 500;
+     line-height: 26px;
+     color: #606060 ;
+     font-family: Roboto, Arial, sans-serif;
+ }
+ 
+ .support,
+ .regulations{
+     width: 192px;
+     height: auto;
+     margin: 14px 24px;
+     font-size: 13px;
+ }
+ .support a,
+ .regulations a{
+     margin-right: 6px;
+     margin-top: 4px;
+     outline: none;
+     text-decoration: none;
+     color: #606060;
+ }
