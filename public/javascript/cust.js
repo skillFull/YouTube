@@ -1,13 +1,11 @@
 const table = document.getElementById('table');
-const createVideo = document.getElementById('createVideo');
-const attachmentYoutube = document.getElementById('attachmentYoutube');
-const notification = document.getElementById('notification');
 const form = document.getElementById('search');
 
 
 
 function render(arr) {
-    let urlImages = arr.map((obj) => {
+    if ( arr.length !== 0){
+      let urlImages = arr.map((obj) => {
         return `<div class="blockImages">
           <img src ="${obj.download_url}">
           <div class ="author">${obj.author}</div>
@@ -15,25 +13,10 @@ function render(arr) {
     });
     let blockImages = urlImages.join("");
     return table.innerHTML = `${blockImages}`;
-}
-
-class Menu {
-  handleEvent(event) {
-    switch (event.type) {
-      case 'mousedown':
-        createVideo.style.backgroundColor = 'rgb(96, 96, 96)'
-        break;
-      case 'mouseup':
-        createVideo.style.backgroundColor = 'inherit'
-        break;
     }
-  }
+      table.innerHTML = `<h1>Not files </h1>`
+
 }
-
-let menu = new Menu();
-createVideo.addEventListener('mousedown', menu)
-createVideo.addEventListener('mouseup', menu)
-
 
 async function data(url) {
   let readUrl = new URL(url);
@@ -47,10 +30,9 @@ data(document.URL + 'data')
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  let res = await fetch ('http://localhost:5000/results', {
+  await fetch ('http://localhost:5000/results', {
     method: 'POST',
     body: new FormData(search)
-  })
-  let req = await res.json();
-  render(req)
+  }).then(res =>  res.json())
+  .then(result => render(result))
 })
